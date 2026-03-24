@@ -4,3 +4,4 @@ dist/
 .azure-functions/
 .env
 local.settings.json /dev.settings.json
+.cursor/
