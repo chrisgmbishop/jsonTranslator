@@ -46,19 +46,6 @@ export async function translateQuestionnaireHandler(
     };
   }
 
-  if (request.method !== "POST") {
-    return {
-      status: 405,
-      headers: {
-        Allow: "POST"
-      },
-      jsonBody: {
-        error: "Method not allowed",
-        requestId
-      }
-    };
-  }
-
   let body: unknown;
   try {
     body = await request.json();

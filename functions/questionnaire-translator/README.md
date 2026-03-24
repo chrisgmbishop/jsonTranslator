@@ -76,7 +76,7 @@ Use **`questionnaire`** (or the whole body, depending on your action) as the JSO
 |--------|---------|
 | **400** | Invalid JSON body, or root is not a plain object (see `error`, `warnings`, `requestId`). |
 | **401** | Shared secret required and header missing/incorrect (see below). |
-| **405** | Method other than POST. |
+| **404 / 405** | Non-POST methods are rejected by the Functions host before this handler runs (response body is from the runtime, not the JSON errors above). Use **POST**. |
 
 ## Optional shared secret (recommended before production)
 

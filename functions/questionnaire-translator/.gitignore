@@ -2,3 +2,5 @@ node_modules/
 dist/
 *.log
 .azure-functions/
+.env
+local.settings.json /dev.settings.json
