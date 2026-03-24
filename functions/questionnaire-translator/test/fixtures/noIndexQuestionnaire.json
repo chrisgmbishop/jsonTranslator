@@ -1,0 +1,1168 @@
+{
+  "@ver": "f1.0",
+  "@q": {
+    "ID": "ef225ec3-19a1-4eb3-bc4d-0e5da08f23d9",
+    "defanswers": 0,
+    "tID": "5be129fc-fcd8-ef11-8eea-00224802bd26",
+    "on": "2025-01-23T21:14:21"
+  },
+  "information": {
+    "service-activity": {
+      "v": "serviceappointment;ee7c01d6-36d8-ef11-8eea-00224802bd26",
+      "vl": "Service",
+      "l": "Service Activity",
+      "d": "",
+      "vis": 1,
+      "on": 0
+    },
+    "work-order": {
+      "v": "salesorder;2310b030-db69-ed11-9562-00224809c210",
+      "vl": "WO-01520-V5Q2",
+      "l": "Work Order",
+      "d": "",
+      "vis": 1,
+      "on": 6
+    },
+    "building-location": {
+      "v": "fsip_buildinglocation;46add543-ec4e-ec11-8c62-0022480a74e1",
+      "vl": "100 King St W - First Canadian Place",
+      "l": "Building Location",
+      "d": "",
+      "vis": 1,
+      "on": 17
+    },
+    "device": {
+      "v": "new_servloc;7ee4b35a-ec4e-ec11-8c62-0022480a74e1",
+      "vl": "183245",
+      "l": "Device",
+      "d": "",
+      "vis": 1,
+      "on": 4247
+    },
+    "device-number": {
+      "v": "1",
+      "vl": "1",
+      "l": "Device Number",
+      "d": "",
+      "vis": 1,
+      "on": 4276
+    },
+    "device-id": {
+      "v": "183245",
+      "vl": "183245",
+      "l": "Device ID",
+      "d": "",
+      "vis": 1,
+      "on": 4289
+    },
+    "device-type": {
+      "v": "Elevators",
+      "vl": "Elevators",
+      "l": "Device Type",
+      "d": "",
+      "vis": 1,
+      "on": 4301
+    },
+    "device-application": {
+      "v": "Hydraulic Holeless w/rope",
+      "vl": "Hydraulic Holeless w/rope",
+      "l": "Device Application",
+      "d": "",
+      "vis": 1,
+      "on": 4313
+    },
+    "location-of-device": {
+      "v": "South",
+      "vl": "South",
+      "l": "Location of Device",
+      "d": "",
+      "vis": 1,
+      "on": 4323
+    },
+    "type-of-inspection": {
+      "v": 3,
+      "vl": "MCP - H6",
+      "l": "Type of Inspection",
+      "d": "",
+      "vis": 1,
+      "on": 8414
+    },
+    "start-inspection_3": {
+      "v": 1,
+      "vl": "Started",
+      "l": "Start Inspection",
+      "d": "Check ready to start inspection",
+      "vis": 1,
+      "on": 9508
+    },
+    "systemuser": {
+      "v": "systemuser;2c2d547f-43ed-ee11-a203-6045bd056cd1",
+      "vl": "Chris Bishop",
+      "l": "Completed By",
+      "d": "",
+      "vis": 0,
+      "on": 27
+    },
+    "form-completed": {
+      "v": "2025-01-23",
+      "vl": "2025-01-23",
+      "l": "Date Completed",
+      "d": "",
+      "vis": 0,
+      "on": 36
+    },
+    "comments_header": {
+      "l": "Comments",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Information",
+      "vis": 1
+    }
+  },
+  "h12-car": {
+    "864131-c-door-reopening-devices": {
+      "l": "8.6.4.13.1 (c): Door Reopening Devices",
+      "d": "",
+      "vis": 1
+    },
+    "864131-d-vision-panels-and-grilles-where-required": {
+      "l": "8.6.4.13.1 (d): Vision Panels and Grilles (Where Required)",
+      "d": "",
+      "vis": 1
+    },
+    "864131-g-astragals-and-resilient-members-door-space-guards-sign-guards-where-required": {
+      "l": "8.6.4.13.1 (g) : Astragals and Resilient Members, Door Space Guards, \u0026 Sign Guards (Where Required)",
+      "d": "",
+      "vis": 1
+    },
+    "864131-i-clutches-engaging-vanes-retiring-cams-and-engaging-rollers_1": {
+      "l": "8.6.4.13.1 (i) : Clutches, Engaging Vanes, Retiring Cams, and Engaging Rollers",
+      "d": "",
+      "vis": 1
+    },
+    "864132-kinetic-energy-and-closing-force-conforms-to-2134-2135-as-applicable": {
+      "l": "8.6.4.13.2 : Kinetic Energy and Closing Force Conforms to 2.13.4 \u0026 2.13.5 (As Applicable)",
+      "d": "",
+      "vis": 1
+    },
+    "86415-car-emergency-system-lighting": {
+      "l": "8.6.4.15: Car Emergency System (Lighting)",
+      "d": "",
+      "vis": 1
+    },
+    "86415-car-emergency-system-ventilation": {
+      "l": "8.6.4.15 : Car Emergency System (Ventilation)",
+      "d": "",
+      "vis": 1
+    },
+    "86415-car-emergency-system-communication": {
+      "l": "8.6.4.15 : Car Emergency System (Communication)",
+      "d": "",
+      "vis": 1
+    },
+    "86415-car-emergency-system-emergency-operation-signaling-devices": {
+      "l": "8.6.4.15 : Car Emergency System (Emergency Operation Signaling Devices)",
+      "d": "",
+      "vis": 1
+    },
+    "86416-stopping-accuracy": {
+      "l": "8.6.4.16 : Stopping Accuracy",
+      "d": "",
+      "vis": 1
+    },
+    "car-comments": {
+      "l": "Car Comments",
+      "d": "",
+      "vis": 1
+    },
+    "car-photo": {
+      "l": "Car Photo",
+      "d": "",
+      "vis": 1
+    },
+    "car---h12-result": {
+      "l": "Car - H12 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Car - H12",
+      "vis": 0
+    }
+  },
+  "h12-machine-room": {
+    "86163-controllers-wiring-cleaning-fuses-jumpers": {
+      "l": "8.6.1.6.3 : Controllers Wiring \u2013 Cleaning, Fuses, \u0026 Jumpers",
+      "d": "",
+      "vis": 1
+    },
+    "8648-cleaning-condition-of-machinecontrol-rooms": {
+      "l": "8.6.4.8: Cleaning \u0026 Condition of Machine/Control Rooms",
+      "d": "",
+      "vis": 1
+    },
+    "86412-governors-rope-grip-jaws-switches-are-free-of-oil": {
+      "l": "8.6.4.12: Governors \u2013 Rope Grip Jaws \u0026 Switches are Free of Oil",
+      "d": "",
+      "vis": 1
+    },
+    "86421-drive-sheaves-with-non-metallic-groove-surfaces-steel-wire-ropes-tightenloose-bolts-as-required": {
+      "l": "8.6.4.21: Drive Sheaves with Non-Metallic Groove Surfaces \u0026 Steel Wire Ropes (Tighten/Loose Bolts as Required)",
+      "d": "",
+      "vis": 1
+    },
+    "8642x-maintenance-of-seismic-devices": {
+      "l": "8.6.4.2X*: Maintenance of Seismic Devices",
+      "d": "",
+      "vis": 1
+    },
+    "8654-tank-level-on---oil-loss-monitoring-program": {
+      "l": "8.6.5.4: Tank Level. (ON - Oil Loss Monitoring Program)",
+      "d": "",
+      "vis": 1
+    },
+    "8657-record-of-oil-usage_1": {
+      "l": "8.6.5.7: Record of Oil Usage",
+      "d": "",
+      "vis": 1
+    },
+    "8659-relief-valve-setting": {
+      "l": "8.6.5.9: Relief Valve Setting",
+      "d": "",
+      "vis": 1
+    },
+    "86512-anti-creep-low-oil-protection": {
+      "l": "8.6.5.12: Anti-Creep \u0026 Low Oil Protection",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room-comments": {
+      "l": "Machine Room Comments",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room-photo": {
+      "l": "Machine Room Photo",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room---h12-result": {
+      "l": "Machine Room - H12 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Machine Room - H12",
+      "vis": 0
+    }
+  },
+  "h12-car-top": {
+    "8641-suspension-and-compensating-wire-ropes-rouging-breaks-etc": {
+      "l": "8.6.4.1: Suspension and Compensating Wire Ropes \u2013 Rouging, Breaks, etc.",
+      "d": "",
+      "vis": 1
+    },
+    "8642-governor-wire-ropes-clean-condition-do-not-lubricate": {
+      "l": "8.6.4.2: Governor Wire Ropes \u2013 Clean, Condition (Do Not Lubricate)",
+      "d": "",
+      "vis": 1
+    },
+    "8643-lubrication-of-guide-rails-as-per-oem-safety-recommendations": {
+      "l": "8.6.4.3: Lubrication of Guide Rails \u2013 As Per OEM Safety Recommendations",
+      "d": "",
+      "vis": 1
+    },
+    "8647-cleaning-of-hoistways": {
+      "l": "8.6.4.7: Cleaning of Hoistways",
+      "d": "",
+      "vis": 1
+    },
+    "8649-cleaning-of-top-of-cars": {
+      "l": "8.6.4.9: Cleaning of Top of Cars",
+      "d": "",
+      "vis": 1
+    },
+    "864131-a-hoistway-door-interlocks-or-mechanical-locks_1": {
+      "l": "8.6.4.13.1 (a): Hoistway Door Interlocks or Mechanical Locks",
+      "d": "",
+      "vis": 1
+    },
+    "864131-b-car-door-electric-contacts-or-car-door-interlocks-where-required_1": {
+      "l": "8.6.4.13.1 (b): Car Door Electric Contacts or Car Door Interlocks (Where Required)",
+      "d": "",
+      "vis": 1
+    },
+    "864131-f-hangers-tracks-door-rollers-up-thrusts-door-safety-retainers-where-required_1": {
+      "l": "8.6.4.13.1 (f): Hangers, Tracks, Door Rollers, Up-Thrusts, \u0026 Door Safety Retainers (Where Required)",
+      "d": "",
+      "vis": 1
+    },
+    "864131-h-sills-bottom-guides-fastenings-condition-engagement_1": {
+      "l": "8.6.4.13.1 (h): Sills \u0026 Bottom Guides, Fastenings, Condition \u0026 Engagement",
+      "d": "",
+      "vis": 1
+    },
+    "864131-j-interconnecting-means_1": {
+      "l": "8.6.4.13.1 (j): Interconnecting Means",
+      "d": "",
+      "vis": 1
+    },
+    "864131-k-door-closers-where-required_1": {
+      "l": "8.6.4.13.1 (k): Door Closers (Where Required)",
+      "d": "",
+      "vis": 1
+    },
+    "864131-l-door-restrictors-where-required_1": {
+      "l": "8.6.4.13.1 (l): Door Restrictors (Where Required)",
+      "d": "",
+      "vis": 1
+    },
+    "cat-top-photo": {
+      "l": "Car Top Comments",
+      "d": "",
+      "vis": 1
+    },
+    "car-top-photo": {
+      "l": "Car Top Photo",
+      "d": "",
+      "vis": 1
+    },
+    "car-top---h12-result": {
+      "l": "Car Top - H12 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Car Top - H12",
+      "vis": 0
+    }
+  },
+  "h12-outsidehoistway": {
+    "864131-e-hoistway-door-unlocking-devices-escutcheons": {
+      "l": "8.6.4.13.1 (e): Hoistway Door Unlocking Devices \u0026 Escutcheons",
+      "d": "",
+      "vis": 1
+    },
+    "86414-hoistway-access-switches": {
+      "l": "8.6.4.14: Hoistway Access Switches",
+      "d": "",
+      "vis": 1
+    },
+    "outside-hoistway-comments": {
+      "l": "Outside Hoistway Comments",
+      "d": "",
+      "vis": 1
+    },
+    "outside-hoistway-photo": {
+      "l": "Outside Hoistway Photo",
+      "d": "",
+      "vis": 1
+    },
+    "outside-hoistway---h12-result": {
+      "l": "Outside Hoistway - H12 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Outside Hoistway - H12",
+      "vis": 0
+    }
+  },
+  "h12-pit": {
+    "8645-safety-mechanisms-shall-be-kept-lubricated-free-of-rust-corrosion-dust-that-may-interfere-with-safe-operation": {
+      "l": "8.6.4.5: Safety Mechanisms Shall Be Kept Lubricated \u0026 Free of Rust, Corrosion \u0026 Dust That May Interfere With Safe Operation",
+      "d": "",
+      "vis": 1
+    },
+    "8647-cleaning-of-pits": {
+      "l": "8.6.4.7: Cleaning of Pits",
+      "d": "",
+      "vis": 1
+    },
+    "86418-compensation-sheaves-switches": {
+      "l": "8.6.4.18: Compensation Sheaves \u0026 Switches",
+      "d": "",
+      "vis": 1
+    },
+    "8655-gland-packing-seals": {
+      "l": "8.6.5.5: Gland Packing \u0026 Seals",
+      "d": "",
+      "vis": 1
+    },
+    "86-56-flexible-hose-fittings": {
+      "l": "8.6. 5.6: Flexible Hose \u0026 Fittings",
+      "d": "",
+      "vis": 1
+    },
+    "86-511-cylinder-corrosion-protection-monitoring": {
+      "l": "8.6. 5.11: Cylinder Corrosion Protection \u0026 Monitoring",
+      "d": "",
+      "vis": 1
+    },
+    "86-513-overspeed-valve-setting": {
+      "l": "8.6. 5.13: Overspeed Valve Setting",
+      "d": "",
+      "vis": 1
+    },
+    "pit-comments": {
+      "l": "Pit Comments",
+      "d": "",
+      "vis": 1
+    },
+    "pit-photo": {
+      "l": "Pit Photo",
+      "d": "",
+      "vis": 1
+    },
+    "pit---h12-result": {
+      "l": "Pit - H12 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Pit - H12",
+      "vis": 0
+    }
+  },
+  "h12-special-provisions": {
+    "86111-firefighters-emergency-operation": {
+      "l": "8.6.11.1: Firefighter\u2019s Emergency Operation",
+      "d": "",
+      "vis": 1
+    },
+    "86112-two-way-communication-means": {
+      "l": "8.6.11.2: Two-Way Communication Means",
+      "d": "",
+      "vis": 1
+    },
+    "86113-access-keys": {
+      "l": "8.6.11.3: Access Keys",
+      "d": "",
+      "vis": 1
+    },
+    "86114-cleaning-of-a-car-hoistway-transparent-enclosure": {
+      "l": "8.6.11.4: Cleaning of a Car \u0026 Hoistway Transparent Enclosure",
+      "d": "",
+      "vis": 1
+    },
+    "86115-emergency-evacuation-procedures-for-elevators": {
+      "l": "8.6.11.5: Emergency Evacuation Procedures for Elevators",
+      "d": "",
+      "vis": 1
+    },
+    "86117-operating-instructions-for-cartop-work-platform": {
+      "l": "8.6.11.7: Operating Instructions for Cartop Work Platform",
+      "d": "",
+      "vis": 1
+    },
+    "86118-egress-reentry-procedure-from-working-areas": {
+      "l": "8.6.11.8: Egress \u0026 Reentry Procedure From Working Areas",
+      "d": "",
+      "vis": 1
+    },
+    "86167-signs-data-plates": {
+      "l": "8.6.1.6.7: Signs \u0026 Data Plates",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions-comments": {
+      "l": "Special Provisions Comments",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions-photo": {
+      "l": "Special Provisions Photo",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions--h12-result": {
+      "l": "Special Provisions- H12 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Special Provisions - H12",
+      "vis": 0
+    }
+  },
+  "h1-machine-room": {
+    "8654-tank-level-on---oil-loss-monitoring-program_1": {
+      "l": "8.6.5.4: Tank Level. (ON - Oil Loss Monitoring Program)",
+      "d": "",
+      "vis": 1
+    },
+    "8657-record-of-oil-usage": {
+      "l": "8.6.5.7: Record of Oil Usage",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room-comments_1": {
+      "l": "Machine Room Comments",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room-photo_1": {
+      "l": "Machine Room Photo",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room---h1-result": {
+      "l": "Machine Room - H1 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Machine Room - H1",
+      "vis": 0
+    }
+  },
+  "h3-car": {
+    "86415-car-emergency-system-emergency-operation-signaling-devices_1": {
+      "l": "8.6.4.15 : Car Emergency System (Emergency Operation Signaling Devices)",
+      "d": "",
+      "vis": 1
+    },
+    "86416-stopping-accuracy_1": {
+      "l": "8.6.4.16 : Stopping Accuracy",
+      "d": "",
+      "vis": 1
+    },
+    "car-comments_1": {
+      "l": "Car Comments",
+      "d": "",
+      "vis": 1
+    },
+    "car-photo_1": {
+      "l": "Car Photo",
+      "d": "",
+      "vis": 1
+    },
+    "car---h3-result": {
+      "l": "Car - H3 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Car - H3",
+      "vis": 0
+    }
+  },
+  "h3-machine-room": {
+    "8654-tank-level-on---oil-loss-monitoring-program_2": {
+      "l": "8.6.5.4: Tank Level. (ON - Oil Loss Monitoring Program)",
+      "d": "",
+      "vis": 1
+    },
+    "8657-record-of-oil-usage_2": {
+      "l": "8.6.5.7: Record of Oil Usage",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room-comments_2": {
+      "l": "Machine Room Comments",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room-photo_2": {
+      "l": "Machine Room Photo",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room---h3-result": {
+      "l": "Machine Room - H3 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Machine Room - H3",
+      "vis": 0
+    }
+  },
+  "h3-car-top": {
+    "8643-lubrication-of-guide-rails-as-per-oem-safety-recommendations_1": {
+      "l": "8.6.4.3: Lubrication of Guide Rails \u2013 As Per OEM Safety Recommendations",
+      "d": "",
+      "vis": 1
+    },
+    "car-top-comments": {
+      "l": "Car Top Comments",
+      "d": "",
+      "vis": 1
+    },
+    "car-top-photo_1": {
+      "l": "Car Top Photo",
+      "d": "",
+      "vis": 1
+    },
+    "car-top---h3-result": {
+      "l": "Car Top - H3 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Car Top - H3",
+      "vis": 0
+    }
+  },
+  "h3-pit": {
+    "8655-gland-packing-seals_1": {
+      "l": "8.6.5.5: Gland Packing \u0026 Seals",
+      "d": "",
+      "vis": 1
+    },
+    "pit-comments_1": {
+      "l": "Pit Comments",
+      "d": "",
+      "vis": 1
+    },
+    "pit-photo_1": {
+      "l": "Pit Photo",
+      "d": "",
+      "vis": 1
+    },
+    "pit---h3-result": {
+      "l": "Pit - H3 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Pit - H3",
+      "vis": 0
+    }
+  },
+  "h3-special-provisions": {
+    "86112-two-way-communication-means_1": {
+      "l": "8.6.11.2: Two-Way Communication Means",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions-comments_1": {
+      "l": "Special Provisions Comments",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions-photo_1": {
+      "l": "Special Provisions Photo",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions---h3-result": {
+      "l": "Special Provisions - H3 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Special Provisions - H3",
+      "vis": 0
+    }
+  },
+  "h6-car": {
+    "864131-c-door-reopening-devices_1": {
+      "v": 1,
+      "vl": "N/A",
+      "l": "8.6.4.13.1 (c): Door Reopening Devices",
+      "d": "",
+      "vis": 1,
+      "on": 11319
+    },
+    "864131-d-vision-panels-and-grilles-where-required_1": {
+      "v": 3,
+      "vl": "Complete",
+      "l": "8.6.4.13.1 (d): Vision Panels and Grilles (Where Required)",
+      "d": "",
+      "vis": 1,
+      "on": 13186
+    },
+    "86415-car-emergency-system-emergency-operation-signaling-devices_2": {
+      "v": 2,
+      "vl": "Incomplete",
+      "l": "8.6.4.15 : Car Emergency System (Emergency Operation Signaling Devices)",
+      "d": "",
+      "vis": 1,
+      "on": 14725
+    },
+    "86416-stopping-accuracy_2": {
+      "v": 3,
+      "vl": "Complete",
+      "l": "8.6.4.16 : Stopping Accuracy",
+      "d": "",
+      "vis": 1,
+      "on": 15424
+    },
+    "car-comments_2": {
+      "l": "Car Comments",
+      "d": "",
+      "vis": 1
+    },
+    "car-photo_2": {
+      "l": "Car Photo",
+      "d": "",
+      "vis": 1
+    },
+    "car---h6-result": {
+      "v": 0,
+      "vl": "Not Satisfactory",
+      "l": "Car - H6 Result:",
+      "d": "",
+      "vis": 1,
+      "on": 15433
+    },
+    "@props": {
+      "l": "Car - H6",
+      "vis": 1
+    }
+  },
+  "h6-machine-room": {
+    "8654-tank-level-on---oil-loss-monitoring-program_3": {
+      "v": 2,
+      "vl": "Incomplete",
+      "l": "8.6.5.4: Tank Level. (ON - Oil Loss Monitoring Program)",
+      "d": "",
+      "vis": 1,
+      "on": 19369
+    },
+    "8657-record-of-oil-usage_3": {
+      "v": 3,
+      "vl": "Complete",
+      "l": "8.6.5.7: Record of Oil Usage",
+      "d": "",
+      "vis": 1,
+      "on": 20341
+    },
+    "machine-room-comments_3": {
+      "v": "Machine Room Comments",
+      "vl": "Machine Room Comments",
+      "l": "Machine Room Comments",
+      "d": "",
+      "vis": 1,
+      "on": 38080
+    },
+    "machine-room-photo_3": {
+      "l": "Machine Room Photo",
+      "d": "",
+      "vis": 1
+    },
+    "machine-room---h6-result": {
+      "v": 0,
+      "vl": "Not Satisfactory",
+      "l": "Machine Room - H6 Result:",
+      "d": "",
+      "vis": 1,
+      "on": 20350
+    },
+    "@props": {
+      "l": "Machine Room - H6",
+      "vis": 1
+    }
+  },
+  "h6-car-top": {
+    "8643-lubrication-of-guide-rails-as-per-oem-safety-recommendations_2": {
+      "v": 3,
+      "vl": "Complete",
+      "l": "8.6.4.3: Lubrication of Guide Rails \u2013 As Per OEM Safety Recommendations",
+      "d": "",
+      "vis": 1,
+      "on": 29734
+    },
+    "car-top-comments_1": {
+      "l": "Car Top Comments",
+      "d": "",
+      "vis": 1
+    },
+    "car-top-photo_2": {
+      "l": "Car Top Photo",
+      "d": "",
+      "vis": 1
+    },
+    "car-top---h6-result": {
+      "v": 1,
+      "vl": "Satisfactory",
+      "l": "Car Top - H6 Result:",
+      "d": "",
+      "vis": 1,
+      "on": 29742
+    },
+    "@props": {
+      "l": "Car Top - H6",
+      "vis": 1
+    }
+  },
+  "h6-pit": {
+    "8655-gland-packing-seals_2": {
+      "v": 3,
+      "vl": "Complete",
+      "l": "8.6.5.5: Gland Packing \u0026 Seals",
+      "d": "",
+      "vis": 1,
+      "on": 32368
+    },
+    "pit-comments_2": {
+      "l": "Pit Comments",
+      "d": "",
+      "vis": 1
+    },
+    "pit-photo_2": {
+      "l": "Pit Photo",
+      "d": "",
+      "vis": 1
+    },
+    "pit---h6-result": {
+      "v": 1,
+      "vl": "Satisfactory",
+      "l": "Pit - H6 Result:",
+      "d": "",
+      "vis": 1,
+      "on": 32375
+    },
+    "@props": {
+      "l": "Pit - H6",
+      "vis": 1
+    }
+  },
+  "h6-special-provisions": {
+    "86112-two-way-communication-means_2": {
+      "v": 3,
+      "vl": "Complete",
+      "l": "8.6.11.2: Two-Way Communication Means",
+      "d": "",
+      "vis": 1,
+      "on": 34764
+    },
+    "special-provisions-comments_2": {
+      "l": "Special Provisions Comments",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions-photo_2": {
+      "l": "Special Provisions Photo",
+      "d": "",
+      "vis": 1
+    },
+    "special-provisions---h6-result": {
+      "v": 1,
+      "vl": "Satisfactory",
+      "l": "Special Provisions - H6 Result:",
+      "d": "",
+      "vis": 1,
+      "on": 34773
+    },
+    "@props": {
+      "l": "Special Provisions - H6",
+      "vis": 1
+    }
+  },
+  "cat-1": {
+    "864191-oil-buffers": {
+      "l": "8.6.4.19.1: Oil Buffers",
+      "d": "",
+      "vis": 1
+    },
+    "864192-safeties-8645-safety-mechanisms": {
+      "l": "8.6.4.19.2: Safeties, 8.6.4.5 Safety Mechanisms",
+      "d": "",
+      "vis": 1
+    },
+    "864193-governors": {
+      "l": "8.6.4.19.3: Governors",
+      "d": "",
+      "vis": 1
+    },
+    "864194-slack-rope-devices-on-winding-drum-machines": {
+      "l": "8.6.4.19.4: Slack-Rope Devices on Winding Drum Machines",
+      "d": "",
+      "vis": 1
+    },
+    "864195-normal-final-terminal-stopping-devices": {
+      "l": "8.6.4.19.5: Normal \u0026 Final Terminal Stopping Devices",
+      "d": "",
+      "vis": 1
+    },
+    "864196-firefighters-emergency-operation": {
+      "l": "8.6.4.19.6: Firefighters\u2019 Emergency Operation",
+      "d": "",
+      "vis": 1
+    },
+    "864197-standby-or-emergency-power-or-emergency-lowering-operation": {
+      "l": "8.6.4.19.7: Standby or Emergency Power or Emergency Lowering Operation",
+      "d": "",
+      "vis": 1
+    },
+    "864198-power-operation-of-door-system": {
+      "l": "8.6.4.19.8: Power Operation of Door System",
+      "d": "",
+      "vis": 1
+    },
+    "864199-broken-rope-tape-or-chain-switch": {
+      "l": "8.6.4.19.9: Broken Rope, Tape, or Chain Switch",
+      "d": "",
+      "vis": 1
+    },
+    "8641910-checkout-procedure-all-eepes-electrical-protective-devices": {
+      "l": "8.6.4.19.10: Checkout Procedure all E/E/PES Electrical Protective Devices",
+      "d": "",
+      "vis": 1
+    },
+    "8641911-ascending-car-overspeed-protection-unintended-car-movement": {
+      "l": "8.6.4.19.11: Ascending Car Overspeed Protection \u0026 Unintended Car Movement",
+      "d": "",
+      "vis": 1
+    },
+    "8641912-traction-loss-detection-means": {
+      "l": "8.6.4.19.12: Traction-Loss Detection Means",
+      "d": "",
+      "vis": 1
+    },
+    "8641913-broken-suspension-member-and-residual-strength-detection-means": {
+      "l": "8.6.4.19.13: Broken-Suspension-Member and Residual-Strength Detection Means",
+      "d": "",
+      "vis": 1
+    },
+    "86419x-emergency-communications": {
+      "l": "8.6.4.19.X*: Emergency Communications",
+      "d": "",
+      "vis": 1
+    },
+    "8681514-heaters-outdoor-units": {
+      "l": "8.6.8.15.14: Heaters \u0026 Outdoor Units",
+      "d": "",
+      "vis": 1
+    },
+    "86419y-means-to-restrict-hoistway-or-car-door-opening": {
+      "l": "8.6.4.19.Y*: Means to Restrict Hoistway or Car Door Opening",
+      "d": "",
+      "vis": 1
+    },
+    "8641925-driving-machine-brake-test-on": {
+      "l": "8.6.4.19.25: Driving Machine Brake Test. (ON)",
+      "d": "",
+      "vis": 1
+    },
+    "865141-relief-valve-verification-of-setting-system-pressure-test": {
+      "l": "8.6.5.14.1: Relief Valve Verification of Setting \u0026 System Pressure Test",
+      "d": "",
+      "vis": 1
+    },
+    "865142-hydraulic-cylinders-pressure-piping": {
+      "l": "8.6.5.14.2: Hydraulic Cylinders \u0026 Pressure Piping",
+      "d": "",
+      "vis": 1
+    },
+    "865143-auxiliary-lowering-tssa-cad": {
+      "l": "8.6.5.14.3: Auxiliary Lowering \u2013 TSSA CAD",
+      "d": "",
+      "vis": 1
+    },
+    "865143-low-oil-protection-operation": {
+      "l": "8.6.5.14.3: Low Oil Protection Operation",
+      "d": "",
+      "vis": 1
+    },
+    "865144-flexible-hose-fitting-assemblies": {
+      "l": "8.6.5.14.4: Flexible Hose \u0026 Fitting Assemblies",
+      "d": "",
+      "vis": 1
+    },
+    "865145-pressure-switch": {
+      "l": "8.6.5.14.5: Pressure Switch",
+      "d": "",
+      "vis": 1
+    },
+    "865146-power-operation-of-door-system": {
+      "l": "8.6.5.14.6: Power Operation of Door System",
+      "d": "",
+      "vis": 1
+    },
+    "865147-slack-rope-device": {
+      "l": "8.6.5.14.7: Slack-Rope Device",
+      "d": "",
+      "vis": 1
+    },
+    "86514x-plunger-gripper": {
+      "l": "8.6.5.14.X: Plunger Gripper",
+      "d": "",
+      "vis": 1
+    },
+    "cat-1-comments": {
+      "l": "CAT 1 Comments",
+      "d": "",
+      "vis": 1
+    },
+    "cat-1-photo": {
+      "l": "CAT 1 Photo",
+      "d": "",
+      "vis": 1
+    },
+    "cat-1-result": {
+      "l": "CAT 1 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "CAT 1",
+      "vis": 1
+    }
+  },
+  "cat-3": {
+    "865151-unexposed-portions-of-pistons": {
+      "l": "8.6.5.15.1: Unexposed Portions of Pistons",
+      "d": "",
+      "vis": 1
+    },
+    "865152-pressure-vessels": {
+      "l": "8.6.5.15.2: Pressure Vessels",
+      "d": "",
+      "vis": 1
+    },
+    "cat-3-comments": {
+      "l": "CAT 3 Comments",
+      "d": "",
+      "vis": 1
+    },
+    "cat-3-photo": {
+      "l": "CAT 3 Photo",
+      "d": "",
+      "vis": 1
+    },
+    "cat-3-result": {
+      "l": "CAT 3 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "CAT 3",
+      "vis": 1
+    }
+  },
+  "cat-5": {
+    "864201-car-counterweight-safeties-rated-load-in-the-car": {
+      "l": "8.6.4.20.1: Car \u0026 Counterweight Safeties (Rated Load in the Car)",
+      "d": "",
+      "vis": 1
+    },
+    "864202-governors": {
+      "l": "8.6.4.20.2: Governors",
+      "d": "",
+      "vis": 1
+    },
+    "864203-oil-buffers": {
+      "l": "8.6.4.20.3: Oil Buffers",
+      "d": "",
+      "vis": 1
+    },
+    "864204-braking-system": {
+      "l": "8.6.4.20.4: Braking System",
+      "d": "",
+      "vis": 1
+    },
+    "864206-emergency-terminal-stopping-speed-limiting-devices": {
+      "l": "8.6.4.20.6: Emergency Terminal Stopping \u0026 Speed-Limiting Devices",
+      "d": "",
+      "vis": 1
+    },
+    "864207-power-opening-of-doors": {
+      "l": "8.6.4.20.7: Power Opening of Doors",
+      "d": "",
+      "vis": 1
+    },
+    "864208-leveling-zone-leveling-speed": {
+      "l": "8.6.4.20.8: Leveling Zone \u0026 Leveling Speed",
+      "d": "",
+      "vis": 1
+    },
+    "864209-inner-landing-zone": {
+      "l": "8.6.4.20.9: Inner Landing Zone",
+      "d": "",
+      "vis": 1
+    },
+    "8642010-braking-system-traction-traction-limits": {
+      "l": "8.6.4.20.10: Braking System, Traction, Traction Limits",
+      "d": "",
+      "vis": 1
+    },
+    "8642011-emergency-brake": {
+      "l": "8.6.4.20.11: Emergency Brake",
+      "d": "",
+      "vis": 1
+    },
+    "865161-governors-safeties-oil-buffers": {
+      "l": "8.6.5.16.1: Governors, Safeties, Oil Buffers",
+      "d": "",
+      "vis": 1
+    },
+    "865162-coated-rope-mag-flux-test": {
+      "l": "8.6.5.16.2: Coated Rope Mag Flux Test",
+      "d": "",
+      "vis": 1
+    },
+    "865163-wire-rope-fastening": {
+      "l": "8.6.5.16.3: Wire Rope Fastening",
+      "d": "",
+      "vis": 1
+    },
+    "865164-plunger-grippers": {
+      "l": "8.6.5.16.4: Plunger Grippers",
+      "d": "",
+      "vis": 1
+    },
+    "865165-overspeed-valves": {
+      "l": "8.6.5.16.5: Overspeed Valves",
+      "d": "",
+      "vis": 1
+    },
+    "865166-class-c2-freight-elevator-loaded-leveling-test": {
+      "l": "8.6.5.16.6: Class C2 Freight Elevator Loaded Leveling Test",
+      "d": "",
+      "vis": 1
+    },
+    "cat-5-comments": {
+      "l": "CAT 5 Comments",
+      "d": "",
+      "vis": 1
+    },
+    "cat-5-photo": {
+      "l": "CAT 5 Photo",
+      "d": "",
+      "vis": 1
+    },
+    "cat-5-result": {
+      "l": "CAT 5 Result:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "CAT 5",
+      "vis": 1
+    }
+  },
+  "conclusion": {
+    "inspection-result": {
+      "v": 0,
+      "vl": "Not Satisfactory",
+      "l": "Inspection Result:",
+      "d": "",
+      "vis": 1,
+      "on": 34786
+    },
+    "signature": {
+      "v": {
+        "c": 1,
+        "s": "annotation"
+      },
+      "vl": "",
+      "l": "SIGNATURE (Enabled Once All Sections Have a Result):",
+      "d": "",
+      "vis": 1
+    },
+    "conclusion-comments": {
+      "l": "Inspection Comments:",
+      "d": "",
+      "vis": 1
+    },
+    "@props": {
+      "l": "Inspection Conclusion",
+      "vis": 1
+    }
+  }
+}

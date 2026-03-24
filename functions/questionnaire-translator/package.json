@@ -1,0 +1,25 @@
+{
+  "name": "questionnaire-translator",
+  "version": "1.0.0",
+  "description": "HTTP Azure Function that reshapes questionnaire JSON into groups/items for DocumentsCorePack",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

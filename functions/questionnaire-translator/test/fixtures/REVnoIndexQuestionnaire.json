@@ -1,0 +1,268 @@
+{
+  "@ver": "f1.0",
+  "@q": {
+    "ID": "ef225ec3-19a1-4eb3-bc4d-0e5da08f23d9",
+    "defanswers": 0,
+    "tID": "5be129fc-fcd8-ef11-8eea-00224802bd26",
+    "on": "2025-01-23T21:14:21"
+  },
+  "groups": [
+    {
+      "name": "information",
+      "items": [
+        {
+          "name": "service-activity",
+          "v": "serviceappointment;ee7c01d6-36d8-ef11-8eea-00224802bd26",
+          "vl": "Service",
+          "l": "Service Activity",
+          "d": "",
+          "vis": 1,
+          "on": 0
+        },
+        {
+          "name": "work-order",
+          "v": "salesorder;2310b030-db69-ed11-9562-00224809c210",
+          "vl": "WO-01520-V5Q2",
+          "l": "Work Order",
+          "d": "",
+          "vis": 1,
+          "on": 6
+        },
+        {
+          "name": "building-location",
+          "v": "fsip_buildinglocation;46add543-ec4e-ec11-8c62-0022480a74e1",
+          "vl": "100 King St W - First Canadian Place",
+          "l": "Building Location",
+          "d": "",
+          "vis": 1,
+          "on": 17
+        },
+        {
+          "name": "device",
+          "v": "new_servloc;7ee4b35a-ec4e-ec11-8c62-0022480a74e1",
+          "vl": "183245",
+          "l": "Device",
+          "d": "",
+          "vis": 1,
+          "on": 4247
+        },
+        {
+          "name": "device-number",
+          "v": "1",
+          "vl": "1",
+          "l": "Device Number",
+          "d": "",
+          "vis": 1,
+          "on": 4276
+        },
+        {
+          "name": "device-id",
+          "v": "183245",
+          "vl": "183245",
+          "l": "Device ID",
+          "d": "",
+          "vis": 1,
+          "on": 4289
+        },
+        {
+          "name": "device-type",
+          "v": "Elevators",
+          "vl": "Elevators",
+          "l": "Device Type",
+          "d": "",
+          "vis": 1,
+          "on": 4301
+        },
+        {
+          "name": "device-application",
+          "v": "Hydraulic Holeless w/rope",
+          "vl": "Hydraulic Holeless w/rope",
+          "l": "Device Application",
+          "d": "",
+          "vis": 1,
+          "on": 4313
+        },
+        {
+          "name": "location-of-device",
+          "v": "South",
+          "vl": "South",
+          "l": "Location of Device",
+          "d": "",
+          "vis": 1,
+          "on": 4323
+        },
+        {
+          "name": "type-of-inspection",
+          "v": 3,
+          "vl": "MCP - H6",
+          "l": "Type of Inspection",
+          "d": "",
+          "vis": 1,
+          "on": 8414
+        },
+        {
+          "name": "start-inspection_3",
+          "v": 1,
+          "vl": "Started",
+          "l": "Start Inspection",
+          "d": "Check ready to start inspection",
+          "vis": 1,
+          "on": 9508
+        },
+        {
+          "name": "systemuser",
+          "v": "systemuser;2c2d547f-43ed-ee11-a203-6045bd056cd1",
+          "vl": "Chris Bishop",
+          "l": "Completed By",
+          "d": "",
+          "vis": 0,
+          "on": 27
+        },
+        {
+          "name": "form-completed",
+          "v": "2025-01-23",
+          "vl": "2025-01-23",
+          "l": "Date Completed",
+          "d": "",
+          "vis": 0,
+          "on": 36
+        },
+        {
+          "name": "comments_header",
+          "l": "Comments",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "@props",
+          "l": "Information",
+          "vis": 1
+        }
+      ]
+    },
+    {
+      "name": "h12-car",
+      "items": [
+        {
+          "name": "864131-c-door-reopening-devices",
+          "l": "8.6.4.13.1 (c): Door Reopening Devices",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "864131-d-vision-panels-and-grilles-where-required",
+          "l": "8.6.4.13.1 (d): Vision Panels and Grilles (Where Required)",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "864131-g-astragals-and-resilient-members-door-space-guards-sign-guards-where-required",
+          "l": "8.6.4.13.1 (g) : Astragals and Resilient Members, Door Space Guards, \u0026 Sign Guards (Where Required)",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "864131-i-clutches-engaging-vanes-retiring-cams-and-engaging-rollers_1",
+          "l": "8.6.4.13.1 (i) : Clutches, Engaging Vanes, Retiring Cams, and Engaging Rollers",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "864132-kinetic-energy-and-closing-force-conforms-to-2134-2135-as-applicable",
+          "l": "8.6.4.13.2 : Kinetic Energy and Closing Force Conforms to 2.13.4 \u0026 2.13.5 (As Applicable)",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "86415-car-emergency-system-lighting",
+          "l": "8.6.4.15: Car Emergency System (Lighting)",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "86415-car-emergency-system-ventilation",
+          "l": "8.6.4.15 : Car Emergency System (Ventilation)",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "86415-car-emergency-system-communication",
+          "l": "8.6.4.15 : Car Emergency System (Communication)",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "86415-car-emergency-system-emergency-operation-signaling-devices",
+          "l": "8.6.4.15 : Car Emergency System (Emergency Operation Signaling Devices)",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "86416-stopping-accuracy",
+          "l": "8.6.4.16 : Stopping Accuracy",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "car-comments",
+          "l": "Car Comments",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "car-photo",
+          "l": "Car Photo",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "car---h12-result",
+          "l": "Car - H12 Result:",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "@props",
+          "l": "Car - H12",
+          "vis": 0
+        }
+      ]
+    },
+    {
+      "name": "conclusion",
+      "items": [
+        {
+          "name": "inspection-result",
+          "v": 0,
+          "vl": "Not Satisfactory",
+          "l": "Inspection Result:",
+          "d": "",
+          "vis": 1,
+          "on": 34786
+        },
+        {
+          "name": "signature",
+          "v": {
+            "c": 1,
+            "s": "annotation"
+          },
+          "vl": "",
+          "l": "SIGNATURE (Enabled Once All Sections Have a Result):",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "conclusion-comments",
+          "l": "Inspection Comments:",
+          "d": "",
+          "vis": 1
+        },
+        {
+          "name": "@props",
+          "l": "Inspection Conclusion",
+          "vis": 1
+        }
+      ]
+    }
+  ]
+}
