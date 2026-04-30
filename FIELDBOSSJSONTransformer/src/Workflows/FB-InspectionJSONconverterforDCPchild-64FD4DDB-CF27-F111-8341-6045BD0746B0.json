@@ -1,0 +1,330 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps-1": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "fsip_FBDataverse"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "questionnaireGUID",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "description": "Please enter your input",
+                  "title": "parentFlowUrl",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text",
+                "text_1"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "4eaf2372-1759-4d65-ba66-0ae056dd8025"
+          }
+        }
+      },
+      "actions": {
+        "Respond_to_a_Power_App_or_flow": {
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "jsonresponse": {
+                  "title": "jsonResponse",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "childflowurl": {
+                  "title": "childFlowUrl",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "flowcomplete": {
+                  "title": "flowComplete",
+                  "type": "boolean",
+                  "x-ms-content-hint": "BOOLEAN",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "jsonresponse": "@{outputs('composeJsonForInspection')}",
+              "childflowurl": "@{concat('https://us.flow.microsoft.com/manage/environments/', workflow()['tags']['environmentName'], '/flows/', workflow()['name'], '/runs/', workflow()['run']['name'])}",
+              "flowcomplete": "@true"
+            }
+          },
+          "runAfter": {
+            "try": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Respond_to_a_Power_App_or_flow_fail": {
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "jsonresponse": {
+                  "title": "jsonResponse",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "childflowurl": {
+                  "title": "childFlowUrl",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "flowcomplete": {
+                  "title": "flowComplete",
+                  "type": "boolean",
+                  "x-ms-content-hint": "BOOLEAN",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "jsonresponse": "@{variables('errorMessage')}",
+              "childflowurl": "@{concat('https://us.flow.microsoft.com/manage/environments/', workflow()['tags']['environmentName'], '/flows/', workflow()['name'], '/runs/', workflow()['run']['name'])}",
+              "flowcomplete": "@false"
+            }
+          },
+          "runAfter": {
+            "setErrorMessage": [
+              "Succeeded"
+            ]
+          }
+        },
+        "initErrorMessageStr": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "errorMessage",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {}
+        },
+        "try": {
+          "type": "Scope",
+          "actions": {
+            "getQuestionnaireData": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "resco_questionnaires",
+                  "recordId": "@triggerBody()['text']",
+                  "$select": "resco_serializedanswers"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps-1"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "539ee21a-b303-4791-8ab3-e03afcc52298"
+              }
+            },
+            "callRescoDictToArrFunction": {
+              "type": "Http",
+              "inputs": {
+                "uri": "https://inspectionjsontranslator-c2asaqgbdba6fyer.eastus-01.azurewebsites.net/api/translateQuestionnaire",
+                "method": "POST",
+                "body": "@outputs('getQuestionnaireData')?['body/resco_serializedanswers']"
+              },
+              "runAfter": {
+                "getQuestionnaireData": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "37009721-f350-4ea3-87b7-c38c50ff1830"
+              }
+            },
+            "parseHTTPResponse": {
+              "type": "ParseJson",
+              "inputs": {
+                "content": "@body('callRescoDictToArrFunction')",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@@ver": {
+                      "type": "string"
+                    },
+                    "@@q": {
+                      "type": "object",
+                      "properties": {
+                        "ID": {
+                          "type": "string"
+                        },
+                        "defanswers": {
+                          "type": "integer"
+                        },
+                        "tID": {
+                          "type": "string"
+                        },
+                        "on": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "rootQuestions": {
+                      "type": "array"
+                    },
+                    "groups": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "questions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "v": {
+                                  "type": "string"
+                                },
+                                "vl": {
+                                  "type": "string"
+                                },
+                                "i": {
+                                  "type": "integer"
+                                },
+                                "on": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "v",
+                                "i"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "questions"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "callRescoDictToArrFunction": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "filterInfoAndInspection": {
+              "type": "Query",
+              "inputs": {
+                "from": "@body('parseHTTPResponse')?['groups']",
+                "where": "@and(not(contains(item()?['name'],'information')),not(contains(item()?['name'],'inspection')))"
+              },
+              "runAfter": {
+                "parseHTTPResponse": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "composeJsonForInspection": {
+              "type": "Compose",
+              "inputs": {
+                "body": {
+                  "@@ver": "@outputs('parseHTTPResponse')?['body']?['@ver']",
+                  "@@q": "@outputs('parseHTTPResponse')?['body']?['@q']",
+                  "rootQuestions": "@outputs('parseHTTPResponse')?['body']?['rootQuestions']",
+                  "groups": "@array(body('filterInfoAndInspection'))"
+                }
+              },
+              "runAfter": {
+                "filterInfoAndInspection": [
+                  "Succeeded"
+                ]
+              }
+            }
+          },
+          "runAfter": {
+            "initErrorMessageStr": [
+              "Succeeded"
+            ]
+          }
+        },
+        "setErrorMessage": {
+          "type": "SetVariable",
+          "inputs": {
+            "name": "errorMessage",
+            "value": "There was an issue with the HTTP request or inspection conversion"
+          },
+          "runAfter": {
+            "try": [
+              "TimedOut",
+              "Skipped",
+              "Failed"
+            ]
+          }
+        }
+      },
+      "description": "Flow to convert Serialized answers from a Questionnaire from a Dictionary of questions to an array of questions to be consumed directly by Documents Core Pack. Takes in serialized string and outputs string of JSON and boolean of completion status."
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

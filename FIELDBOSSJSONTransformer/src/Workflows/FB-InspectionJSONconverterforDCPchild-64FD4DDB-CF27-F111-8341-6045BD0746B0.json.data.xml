@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{64fd4ddb-cf27-f111-8341-6045bd0746b0}" Name="FB - Inspection JSON converter for DCP (child)" Description="Flow to convert Serialized answers from a Questionnaire from a Dictionary of questions to an array of questions to be consumed directly by Documents Core Pack. Takes in serialized string and outputs string of JSON and boolean of completion status." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/FB-InspectionJSONconverterforDCPchild-64FD4DDB-CF27-F111-8341-6045BD0746B0.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>5</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="FB - Inspection JSON converter for DCP (child)" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Flow to convert Serialized answers from a Questionnaire from a Dictionary of questions to an array of questions to be consumed directly by Documents Core Pack. Takes in serialized string and outputs string of JSON and boolean of completion status." />
+  </Descriptions>
+</Workflow>
