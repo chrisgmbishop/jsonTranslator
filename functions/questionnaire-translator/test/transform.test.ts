@@ -35,6 +35,7 @@ describe("transformQuestionnaireMapToGroups", () => {
     expect(result.questionnaire.groups).toEqual([
       {
         name: "sectionA",
+        displayName: "sectionA",
         items: [
           { name: "itemOne", v: 1, l: "Label" },
           { name: "itemTwo", d: "desc" }
@@ -88,6 +89,8 @@ describe("transformQuestionnaireMapToGroups", () => {
     expect(slg).toBeDefined();
     expect(slg?.items.some((i) => i.name === "type-of-loop")).toBe(true);
     expect(result.questionnaire.groups.map((g) => g.name)).toEqual(["system-loop-general[0]", "conclusion"]);
+    expect(slg?.displayName).toBe("System Loop General");
+    expect(result.questionnaire.groups.find((g) => g.name === "conclusion")?.displayName).toBe("conclusion");
   });
 
   it("maps array section with multiple object rows to ordered indexed groups", () => {
@@ -103,6 +106,7 @@ describe("transformQuestionnaireMapToGroups", () => {
     expect(result.questionnaire.groups.map((g) => g.name)).toEqual(["repeatable[0]", "repeatable[1]", "tail"]);
     expect(result.groupCount).toBe(3);
     expect(result.itemCount).toBe(3);
+    expect(result.questionnaire.groups.map((g) => g.displayName)).toEqual(["repeatable[0]", "repeatable[1]", "tail"]);
   });
 
   it("skips non-object array rows with SECTION_ROW_SKIPPED and keeps valid rows", () => {
@@ -121,6 +125,35 @@ describe("transformQuestionnaireMapToGroups", () => {
     expect(rowSkips.find((w) => w.path === "mixed[2]")?.message).toContain("received null");
     expect(rowSkips.find((w) => w.path === "mixed[1]")?.message).toContain("received string");
     expect(rowSkips.find((w) => w.path === "mixed[4]")?.message).toContain("received number");
+    expect(result.questionnaire.groups.map((g) => g.displayName)).toEqual(["mixed[0]", "mixed[3]"]);
+  });
+
+  it("sets displayName from @props.l or falls back to group name", () => {
+    const input: Record<string, unknown> = {
+      withLabel: {
+        x: { v: 1 },
+        "@props": { l: "Human Label", d: "" }
+      },
+      emptyLabel: {
+        y: { v: 2 },
+        "@props": { l: "   ", d: "" }
+      },
+      noProps: { z: { v: 3 } },
+      badProps: {
+        w: { v: 4 },
+        "@props": "not-an-object"
+      }
+    };
+    const result = transformQuestionnaireMapToGroups(input);
+    expect(result.ok).toBe(true);
+    if (!result.ok) {
+      return;
+    }
+    const byName = Object.fromEntries(result.questionnaire.groups.map((g) => [g.name, g.displayName]));
+    expect(byName["withLabel"]).toBe("Human Label");
+    expect(byName["emptyLabel"]).toBe("emptyLabel");
+    expect(byName["noProps"]).toBe("noProps");
+    expect(byName["badProps"]).toBe("badProps");
   });
 
   it("full fixture: group order and names match top-level section keys", () => {

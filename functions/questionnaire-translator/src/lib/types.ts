@@ -8,9 +8,11 @@ export type QuestionnaireItem = Readonly<{
 
 /**
  * One section (former top-level object) expressed as a named list of items.
+ * `displayName` is the human label from `@props.l` when present; otherwise equals `name`.
  */
 export type QuestionnaireGroup = Readonly<{
   name: string;
+  displayName: string;
   items: readonly QuestionnaireItem[];
 }>;
 
