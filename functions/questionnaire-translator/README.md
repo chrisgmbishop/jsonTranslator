@@ -1,6 +1,6 @@
 # Questionnaire translator (Azure Functions)
 
-HTTP Azure Function that reshapes questionnaire JSON from **section-keyed objects** into a **`groups[]` array** (each group has `name` and `items[]`; each item includes `name` plus original fields) for use with **DocumentsCorePack** and similar templating in Power Automate.
+HTTP Azure Function that reshapes questionnaire JSON from **section-keyed objects** into a **`groups[]` array** (each group has `name`, `displayName` and `items[]`; each item includes `name` plus original fields) for use with **DocumentsCorePack** and similar templating in Power Automate.
 
 ## Prerequisites
 
@@ -52,6 +52,7 @@ Body: the raw questionnaire object (same shape as `noIndexQuestionnaire.json`).
     "groups": [
       {
         "name": "information",
+        "displayName": "Information",
         "items": [
           { "name": "service-activity", "v": "...", "vl": "...", "l": "..." }
         ]
@@ -106,11 +107,13 @@ Flows in another tenant POST to your Function’s **public HTTPS** URL (after de
 - Copies **`@ver`** and **`@q`** onto `questionnaire` when present.
 - Every other top-level key that is a **plain object** becomes one **group** named after that key; key order is preserved.
 - A top-level key whose value is an **array** of plain objects becomes **one group per row**, named **`sectionKey[index]`** (zero-based), in array order (e.g. `dhw-mixing-valve[0]`). An **empty array** yields no groups for that key.
+- Each **group** includes **`name`** (technical key, or `sectionKey[index]` for array rows), **`displayName`** (from `@props.l` when it is a non-empty string after trim; otherwise **`displayName` equals `name`**), then **`items`**.
 - Each property inside a section row becomes an **item** with **`name`** = the source key and remaining fields copied; a conflicting `name` on the item is replaced by the source key.
 - Top-level keys starting with **`@`** other than `@ver` / `@q` are skipped with a **warning**.
 - Top-level values that are neither a plain object nor an array are skipped with **`SECTION_SKIPPED`**.
 - An array row that is not a plain object is skipped with **`SECTION_ROW_SKIPPED`** (path = `sectionKey[index]`).
 - Non-object item values are skipped with a **warning** (`ITEM_SKIPPED`).
+- **`@props`** is not included in **`items`**; its **`l`** is surfaced only as **`displayName`**.
 
 ## Project layout
 

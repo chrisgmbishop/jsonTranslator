@@ -9,6 +9,7 @@
   "groups": [
     {
       "name": "information",
+      "displayName": "Information",
       "items": [
         {
           "name": "service-activity",
@@ -132,16 +133,12 @@
           "l": "Comments",
           "d": "",
           "vis": 1
-        },
-        {
-          "name": "@props",
-          "l": "Information",
-          "vis": 1
         }
       ]
     },
     {
       "name": "h12-car",
+      "displayName": "Car - H12",
       "items": [
         {
           "name": "864131-c-door-reopening-devices",
@@ -220,16 +217,12 @@
           "l": "Car - H12 Result:",
           "d": "",
           "vis": 1
-        },
-        {
-          "name": "@props",
-          "l": "Car - H12",
-          "vis": 0
         }
       ]
     },
     {
       "name": "conclusion",
+      "displayName": "Inspection Conclusion",
       "items": [
         {
           "name": "inspection-result",
@@ -255,11 +248,6 @@
           "name": "conclusion-comments",
           "l": "Inspection Comments:",
           "d": "",
-          "vis": 1
-        },
-        {
-          "name": "@props",
-          "l": "Inspection Conclusion",
           "vis": 1
         }
       ]

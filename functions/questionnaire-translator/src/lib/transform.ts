@@ -36,6 +36,28 @@ function skippedArrayRowReceivedLabel(row: unknown): string {
 }
 
 /**
+ * User-facing group label from section `@props.l`, or `groupName` when missing or not a non-empty string.
+ */
+function deriveGroupDisplayName(sectionValue: Record<string, unknown>, groupName: string): string {
+  if (!Object.prototype.hasOwnProperty.call(sectionValue, "@props")) {
+    return groupName;
+  }
+  const props = sectionValue["@props"];
+  if (!isPlainObject(props)) {
+    return groupName;
+  }
+  const label = props["l"];
+  if (typeof label !== "string") {
+    return groupName;
+  }
+  const trimmed = label.trim();
+  if (trimmed === "") {
+    return groupName;
+  }
+  return trimmed;
+}
+
+/**
  * Deep-clones JSON-serializable plain objects via JSON round-trip (questionnaire payloads are JSON-safe).
  */
 function clonePlainObject(obj: Record<string, unknown>): Record<string, unknown> {
@@ -83,8 +105,12 @@ function buildGroupWithWarnings(
   sectionValue: Record<string, unknown>,
   warnings: TransformWarning[]
 ): QuestionnaireGroup {
+  const displayName = deriveGroupDisplayName(sectionValue, sectionKey);
   const items: QuestionnaireItem[] = [];
   for (const itemKey of Object.keys(sectionValue)) {
+    if (itemKey === "@props") {
+      continue;
+    }
     const itemPath = `${sectionKey}.${itemKey}`;
     const itemValue = sectionValue[itemKey];
     const built = buildItem(itemKey, itemValue, itemPath, warnings);
@@ -93,7 +119,7 @@ function buildGroupWithWarnings(
     }
     items.push(built);
   }
-  return { name: sectionKey, items };
+  return { name: sectionKey, displayName, items };
 }
 
 /**
