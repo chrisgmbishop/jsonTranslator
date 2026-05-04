@@ -23,6 +23,19 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
 }
 
 /**
+ * Label for SECTION_ROW_SKIPPED diagnostics (`typeof null` is "object" in JS, so null is explicit).
+ */
+function skippedArrayRowReceivedLabel(row: unknown): string {
+  if (row === null) {
+    return "null";
+  }
+  if (Array.isArray(row)) {
+    return "array";
+  }
+  return typeof row;
+}
+
+/**
  * Deep-clones JSON-serializable plain objects via JSON round-trip (questionnaire payloads are JSON-safe).
  */
 function clonePlainObject(obj: Record<string, unknown>): Record<string, unknown> {
@@ -84,8 +97,10 @@ function buildGroupWithWarnings(
 }
 
 /**
- * Transforms a questionnaire JSON root object from `{ sectionKey: { itemKey: {...} } } }` into `{ groups: [...] }`.
- * Preserves `@ver` and `@q` as-is. Other top-level keys starting with `@` are skipped with a warning.
+ * Transforms a questionnaire JSON root object into `{ groups: [...] }`.
+ * Top-level plain-object sections map to one group per key; top-level **arrays** of plain objects
+ * map to one group per row with name `sectionKey[index]`. Preserves `@ver` and `@q` as-is.
+ * Other top-level keys starting with `@` are skipped with a warning.
  */
 export function transformQuestionnaireMapToGroups(root: unknown): TransformResult {
   const warnings: TransformWarning[] = [];
@@ -127,18 +142,39 @@ export function transformQuestionnaireMapToGroups(root: unknown): TransformResul
     }
 
     const value = root[key];
-    if (!isPlainObject(value)) {
-      warnings.push({
-        code: "SECTION_SKIPPED",
-        message: `Skipping non-object section "${key}"`,
-        path: key
-      });
+
+    if (isPlainObject(value)) {
+      const group = buildGroupWithWarnings(key, value, warnings);
+      groups.push(group);
+      itemCount += group.items.length;
       continue;
     }
 
-    const group = buildGroupWithWarnings(key, value, warnings);
-    groups.push(group);
-    itemCount += group.items.length;
+    if (Array.isArray(value)) {
+      for (let index = 0; index < value.length; index += 1) {
+        const row = value[index];
+        const groupName = `${key}[${String(index)}]`;
+        if (!isPlainObject(row)) {
+          const received = skippedArrayRowReceivedLabel(row);
+          warnings.push({
+            code: "SECTION_ROW_SKIPPED",
+            message: `Expected object at ${groupName}, received ${received}`,
+            path: groupName
+          });
+          continue;
+        }
+        const group = buildGroupWithWarnings(groupName, row, warnings);
+        groups.push(group);
+        itemCount += group.items.length;
+      }
+      continue;
+    }
+
+    warnings.push({
+      code: "SECTION_SKIPPED",
+      message: `Skipping non-object section "${key}"`,
+      path: key
+    });
   }
 
   const questionnaire: TransformedQuestionnaire = {

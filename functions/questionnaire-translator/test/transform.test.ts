@@ -67,6 +67,62 @@ describe("transformQuestionnaireMapToGroups", () => {
     expect(result.error).toContain("plain object");
   });
 
+  it("maps array section with one object row to a single indexed group", () => {
+    const input: Record<string, unknown> = {
+      "@ver": "f1.0",
+      "system-loop-general": [
+        {
+          "type-of-loop": { v: 2, vl: "Heating", l: "Type of Loop" },
+          "@props": { l: "System Loop General", d: "" }
+        }
+      ],
+      conclusion: { done: { v: 1, l: "Done" } }
+    };
+    const result = transformQuestionnaireMapToGroups(input);
+    expect(result.ok).toBe(true);
+    if (!result.ok) {
+      return;
+    }
+    expect(result.groupCount).toBe(2);
+    const slg = result.questionnaire.groups.find((g) => g.name === "system-loop-general[0]");
+    expect(slg).toBeDefined();
+    expect(slg?.items.some((i) => i.name === "type-of-loop")).toBe(true);
+    expect(result.questionnaire.groups.map((g) => g.name)).toEqual(["system-loop-general[0]", "conclusion"]);
+  });
+
+  it("maps array section with multiple object rows to ordered indexed groups", () => {
+    const input: Record<string, unknown> = {
+      repeatable: [{ a: { v: 1 } }, { b: { v: 2 } }],
+      tail: { z: { v: 3 } }
+    };
+    const result = transformQuestionnaireMapToGroups(input);
+    expect(result.ok).toBe(true);
+    if (!result.ok) {
+      return;
+    }
+    expect(result.questionnaire.groups.map((g) => g.name)).toEqual(["repeatable[0]", "repeatable[1]", "tail"]);
+    expect(result.groupCount).toBe(3);
+    expect(result.itemCount).toBe(3);
+  });
+
+  it("skips non-object array rows with SECTION_ROW_SKIPPED and keeps valid rows", () => {
+    const input: Record<string, unknown> = {
+      mixed: [{ ok: { v: 1 } }, "not-an-object", null, { ok2: { v: 2 } }, 42]
+    };
+    const result = transformQuestionnaireMapToGroups(input);
+    expect(result.ok).toBe(true);
+    if (!result.ok) {
+      return;
+    }
+    expect(result.questionnaire.groups.map((g) => g.name)).toEqual(["mixed[0]", "mixed[3]"]);
+    const rowSkips = result.warnings.filter((w) => w.code === "SECTION_ROW_SKIPPED");
+    expect(rowSkips.length).toBe(3);
+    expect(rowSkips.map((w) => w.path).sort()).toEqual(["mixed[1]", "mixed[2]", "mixed[4]"]);
+    expect(rowSkips.find((w) => w.path === "mixed[2]")?.message).toContain("received null");
+    expect(rowSkips.find((w) => w.path === "mixed[1]")?.message).toContain("received string");
+    expect(rowSkips.find((w) => w.path === "mixed[4]")?.message).toContain("received number");
+  });
+
   it("full fixture: group order and names match top-level section keys", () => {
     const raw = readFixtureJson("fixtures/noIndexQuestionnaire.json");
     const result = transformQuestionnaireMapToGroups(raw);
