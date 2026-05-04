@@ -1,6 +1,6 @@
 # Questionnaire translator (Azure Functions)
 
-HTTP Azure Function that reshapes questionnaire JSON from **section-keyed objects** into a **`groups[]` array** (each group has `name` and `items[]`; each item includes `name` plus original fields) for use with **DocumentsCorePack** and similar templating in Power Automate.
+HTTP Azure Function that reshapes questionnaire JSON from **section-keyed objects** into a **`groups[]` array** (each group has `name`, `displayName` and `items[]`; each item includes `name` plus original fields) for use with **DocumentsCorePack** and similar templating in Power Automate.
 
 ## Prerequisites
 
